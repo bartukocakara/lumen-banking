@@ -11,11 +11,16 @@ docker-compose up -d --build
 
 ### Docker Run
 ```
-docker-compose up
+docker compose up
+```
+
+### Docker List Containers
+```
+docker ps
 ```
 ### Container execution
 ```
-1-) docker exec -it c_phpfpm sh
+1-) docker exec -it i_phpfpm sh
 2-) bash
 3-) cd banking
 ```
