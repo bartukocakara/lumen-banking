@@ -20,9 +20,8 @@ docker ps
 ```
 ### Container execution
 ```
-1-) docker exec -it i_phpfpm sh
-2-) bash
-3-) cd banking
+1-) docker exec -it i_phpfpm bash
+2-) cd banking
 ```
 # Now we can execute composer, artisan etc. commands.
 
