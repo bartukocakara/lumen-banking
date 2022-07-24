@@ -1,0 +1,298 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Banking API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "apiteam@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8081",
+            "description": "OpenApi host"
+        }
+    ],
+    "paths": {
+        "/api/v1/accounts": {
+            "get": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "List Account Data",
+                "description": "List Account Data",
+                "parameters": [
+                    {
+                        "name": "currency_id",
+                        "in": "query",
+                        "description": "Currency ID",
+                        "required": true,
+                        "example": 1
+                    },
+                    {
+                        "name": "paginate",
+                        "in": "query",
+                        "description": "Paginate",
+                        "required": true,
+                        "example": 15
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Create Account Data",
+                "description": "Create Account Data",
+                "operationId": "099760723f6b97c23b81c1c22b06ccf7",
+                "parameters": [
+                    {
+                        "name": "owner",
+                        "in": "query",
+                        "description": "Account Owner Name",
+                        "required": true,
+                        "example": "Bartu"
+                    },
+                    {
+                        "name": "currency_id",
+                        "in": "query",
+                        "description": "Currency ID",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/api/v1/accounts/{AccountID}": {
+            "delete": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Get Account Data",
+                "description": "Get Account Data",
+                "operationId": "77b51f6774e94951fdc78c439713b990",
+                "parameters": [
+                    {
+                        "name": "AccountID",
+                        "in": "path",
+                        "description": "Account ID",
+                        "required": true,
+                        "example": 12
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/api/v1/entries/synchronisation": {
+            "get": {
+                "tags": [
+                    "Entries"
+                ],
+                "summary": "Syncronize multiple databases",
+                "description": "Syncronize multiple databases",
+                "operationId": "621cc719f10ecdf12d256698d9e6774d",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/api/v1/transactions": {
+            "get": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "List Transactions",
+                "description": "List Transactions",
+                "parameters": [
+                    {
+                        "name": "currency_id",
+                        "in": "query",
+                        "description": "Currency ID",
+                        "required": true,
+                        "example": 1
+                    },
+                    {
+                        "name": "paginate",
+                        "in": "query",
+                        "description": "Paginate",
+                        "required": true,
+                        "example": 15
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Create Transaction",
+                "description": "Create Transaction",
+                "operationId": "06eb6871633cd10934b8b71d3e9e66e0",
+                "parameters": [
+                    {
+                        "name": "from_account_id",
+                        "in": "query",
+                        "description": "Account ID",
+                        "required": true,
+                        "example": 21
+                    },
+                    {
+                        "name": "to_account_id",
+                        "in": "query",
+                        "description": "Account ID",
+                        "required": true,
+                        "example": 12
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "Amount of money",
+                        "required": true,
+                        "example": 100
+                    },
+                    {
+                        "name": "currency_id",
+                        "in": "query",
+                        "description": "Currency ID",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/api/v1/transactions/withdraws/{AccountID}": {
+            "patch": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Withdraw Money",
+                "description": "Withdraw Money",
+                "operationId": "f23b105694271a4937dccfbb46eb0ad2",
+                "parameters": [
+                    {
+                        "name": "AccountID",
+                        "in": "path",
+                        "description": "Account ID",
+                        "required": true,
+                        "example": 12
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "Amount of money",
+                        "required": true,
+                        "example": 100
+                    },
+                    {
+                        "name": "currency_id",
+                        "in": "query",
+                        "description": "Currency ID",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/api/v1/transactions/deposits/{AccountID}": {
+            "patch": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Deposit Money",
+                "description": "Deposit Money",
+                "operationId": "6d6e00355e8bbbafbc37ad2767e605a2",
+                "parameters": [
+                    {
+                        "name": "AccountID",
+                        "in": "path",
+                        "description": "Account ID",
+                        "required": true,
+                        "example": 12
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "Amount of money",
+                        "required": true,
+                        "example": 100
+                    },
+                    {
+                        "name": "currency_id",
+                        "in": "query",
+                        "description": "Currency ID",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
+    }
+}
