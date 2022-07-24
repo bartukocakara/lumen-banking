@@ -44,7 +44,7 @@ http://localhost:8081/api/v1/documentation
 
 ### Db migrate partialy
 ```
-- php artisan migrate --path='./database/migrations/2022_07_19_151613_create_products_table.php' (Nothing to migrate. = Clear migrations table)
+- php artisan migrate --path='./database/migrations/2022_07_18_003232_create_currencies_table.php' (Nothing to migrate. = Clear migrations table)
 ```
 ### Unit Test All
 ```
@@ -56,9 +56,9 @@ vendor/bin/phpunit
 vendor/bin/phpunit --filter test_create_account
 vendor/bin/phpunit --filter test_list_account
 vendor/bin/phpunit --filter test_delete_account
+
 #Transactions
 vendor/bin/phpunit --filter test_create_transaction
 vendor/bin/phpunit --filter test_withdraw_transaction
 vendor/bin/phpunit --filter test_deposit_transaction
-
 ```
