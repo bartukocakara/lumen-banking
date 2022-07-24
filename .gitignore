@@ -114,4 +114,5 @@ fabric.properties
 .data/
 data/
 
+.vscode
 .DS_Store
