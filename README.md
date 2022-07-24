@@ -34,12 +34,11 @@ composer install
 php artisan swagger-lume:generate
 ```
 #### App url http://localhost:8081/api/v1/documentation
-```
+
 ### Db migrate 
 ```
 php artisan migrate --seed
 ```
-
 ### Db migrate partialy
 ```
 php artisan migrate --path='./database/migrations/2022_07_18_003232_create_currencies_table.php' (Nothing to migrate. = Clear migrations table)
