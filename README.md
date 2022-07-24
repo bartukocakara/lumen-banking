@@ -39,7 +39,7 @@ http://localhost:8081/api/v1/documentation
 ```
 ### Db migrate 
 ```
-- php artisan migrate
+- php artisan migrate --seed
 ```
 
 ### Db migrate partialy
