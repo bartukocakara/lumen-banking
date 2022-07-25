@@ -111,8 +111,10 @@ fabric.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/phpstorm
 
-.data/
-data/
+.local-data/
+.remote-data/
+local-data/
+remote-data/
 
 .vscode
 .DS_Store

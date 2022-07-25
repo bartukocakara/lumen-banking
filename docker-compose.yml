@@ -11,18 +11,28 @@ services:
       - ./src/banking:/var/www/banking
       - ./config/php-fpm/php.ini:/usr/local/etc/php/php.ini
 
-  bank_db: 
+  local_bank_db: 
     image: mysql:8
-    container_name: i_mysql
+    container_name: i_local_mysql
     volumes: 
-      - ./data/mysql/banking_db:/var/lib/mysql 
+      - ./local-data/mysql/banking_db:/var/lib/local-data/mysql 
     restart: always 
     ports: 
       - "3306:3306" 
     environment:
       - MYSQL_ROOT_PASSWORD=123456
       - MYSQL_DATABASE=banking_db
-
+  remote_bank_db: 
+    image: mysql:8
+    container_name: i_remote_mysql
+    volumes: 
+      - ./remote-data/mysql/banking_db:/var/lib/remote-data/mysql 
+    restart: always 
+    ports: 
+      - "3307:3306" 
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=banking_db
   bank_app:
     image: nginx:alpine
     container_name: i_banking
